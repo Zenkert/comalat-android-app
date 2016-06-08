@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_item"
+        android:title="@string/my_workspace">
+        <menu>
+            <group
+                android:id="@+id/main_group"
+                android:checkableBehavior="single">
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/other">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@mipmap/ic_logout"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+</menu>
