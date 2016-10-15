@@ -7,9 +7,11 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_user">UserActivity</string>
 
+
     <!-- server's url for connection-->
     <string name="url">http://141.99.248.86:8089/direct/</string>
     <string name="help_url">"http://141.99.248.86:8089/portal/help/main"</string>
+    <string name="portal">"http://141.99.248.86:8089/portal/"</string>
 
     <!-- Message of the day -->
     <string name="message_of_the_day">Message Of The Day</string>

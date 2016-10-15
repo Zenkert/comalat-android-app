@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import org.sakaiproject.api.internet.NetWork;
 import org.sakaiproject.helpers.ActionsHelper;
@@ -80,6 +82,14 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    private class MyBrowser extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -99,6 +109,7 @@ public class MainActivity extends AppCompatActivity
                 ActionsHelper.selectFragment(featuresFragment, R.id.content_frame, this);
                 break;
             case R.id.site_browser:
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("url", getResources().getString(R.string.portal)));
                 break;
             case R.id.training:
                 TrainingFragment trainingFragment = new TrainingFragment();

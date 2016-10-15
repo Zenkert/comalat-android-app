@@ -108,5 +108,4 @@
 
         <activity android:name=".FriendsActivity" />
     </application>
-
 </manifest>
