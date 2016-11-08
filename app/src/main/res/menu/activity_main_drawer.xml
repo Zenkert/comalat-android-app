@@ -10,11 +10,11 @@
             android:title="@string/welcome" />
         <item
             android:id="@+id/about"
-            android:icon="@mipmap/ic_public"
+            android:icon="@drawable/ic_menu_about"
             android:title="@string/about" />
         <item
             android:id="@+id/features"
-            android:icon="@mipmap/ic_public"
+            android:icon="@drawable/ic_menu_features"
             android:title="@string/features" />
         <item
             android:id="@+id/site_browser"
@@ -22,11 +22,11 @@
             android:title="@string/site_browser" />
         <item
             android:id="@+id/training"
-            android:icon="@mipmap/ic_public"
+            android:icon="@drawable/ic_menu_training"
             android:title="@string/training" />
         <item
             android:id="@+id/acknowledgements"
-            android:icon="@mipmap/ic_public"
+            android:icon="@drawable/ic_menu_acknowledgements"
             android:title="@string/acknowledgements" />
         <item
             android:id="@+id/login"
@@ -34,11 +34,11 @@
             android:title="@string/login" />
         <item
             android:id="@+id/new_user"
-            android:icon="@mipmap/ic_person"
+            android:icon="@drawable/ic_menu_new_user"
             android:title="@string/new_account" />
         <item
             android:id="@+id/reset_password"
-            android:icon="@mipmap/ic_person"
+            android:icon="@drawable/ic_menu_reset_password"
             android:title="@string/reset_password" />
     </group>
 

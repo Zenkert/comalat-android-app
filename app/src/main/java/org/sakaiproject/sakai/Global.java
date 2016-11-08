@@ -5,4 +5,6 @@ package org.sakaiproject.sakai;
  */
 
 public class Global {
+    public static String userName;
+    public static String passWord;
 }

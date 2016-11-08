@@ -1,5 +1,6 @@
 package org.sakaiproject.sakai;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
@@ -10,6 +11,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.HttpAuthHandler;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -18,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.sakaiproject.helpers.ActionsHelper;
+
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -96,7 +100,9 @@ public class WebViewActivity extends AppCompatActivity {
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
         webView.loadUrl(url);
+        webView.addJavascriptInterface(new JavaScriptInterface(this), "Android");
     }
 
 
@@ -115,16 +121,11 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     public class WebClient extends WebViewClient {
+
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            urlTextView.setText(url);
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
-            progressBar.setVisibility(View.GONE);
+            urlTextView.setText(getResources().getString(R.string.webview_title));
         }
 
         @Override
@@ -135,5 +136,20 @@ public class WebViewActivity extends AppCompatActivity {
             return false;
         }
 
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
+
+            // Injects javascript inside java in order to automatically
+            // fill the fields and submits the form
+
+            webView.loadUrl("javascript: {" +
+                    "document.getElementById('eid').value = Android.getWebviewUsername();" +
+                    "document.getElementById('pw').value = Android.getWebviewPassword();" +
+                    "document.getElementById('submit').click(); }");
+        }
+
     }
 }
+

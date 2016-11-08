@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
                 ActionsHelper.selectFragment(featuresFragment, R.id.content_frame, this);
                 break;
             case R.id.site_browser:
-                startActivity(new Intent(this, WebViewActivity.class).putExtra("url", getResources().getString(R.string.portal)));
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("url", getResources().getString(R.string.comalat_guide_tool)));
                 break;
             case R.id.training:
                 TrainingFragment trainingFragment = new TrainingFragment();

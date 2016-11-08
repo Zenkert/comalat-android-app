@@ -77,14 +77,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     String userId = usernameEditText.getText().toString().trim();
                     String pass = passwordEditText.getText().toString().trim();
 
+                    Global.userName = userId;
+                    Global.passWord = pass;
+
                     ILogin login;
                     LoginType type;
+
+
 
                     if (NetWork.getConnectionEstablished()) {
                         login = new LoginService(progressBar, loginTextView, getContext());
                         login.login(getResources().getString(R.string.url), userId, pass);
-
+                        Toast.makeText(getContext(), getResources().getString(R.string.connection_established), Toast.LENGTH_SHORT).show();
                         clearEditTexts();
+
                     } else {
                         login = new OfflineLogin(progressBar, loginTextView, getContext());
                         login.login(userId, pass);
@@ -104,7 +110,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                         clearEditTexts();
                     }
-
 
                 } else
                     Toast.makeText(getContext(), getResources().getString(R.string.empty_fields), Toast.LENGTH_SHORT).show();

@@ -7,11 +7,15 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_user">UserActivity</string>
 
+    <!-- WebView Title -->
+    <string name="webview_title">Comalat :: Adaptive Language Training</string>
+
 
     <!-- server's url for connection-->
     <string name="url">http://141.99.248.86:8089/direct/</string>
     <string name="help_url">"http://141.99.248.86:8089/portal/help/main"</string>
     <string name="portal">"http://141.99.248.86:8089/portal/"</string>
+    <string name="comalat_guide_tool">http://141.99.248.86:8089/portal/site/english_language_training/tool/4ad75286-6e28-41c1-83a3-41ba3aeffe8a/?0</string>
 
     <!-- Message of the day -->
     <string name="message_of_the_day">Message Of The Day</string>
@@ -235,6 +239,7 @@
     <string name="session_expiration_on_fifteen_minutes">Session will expire in less than 15 minutes</string>
 
     <!-- Toast messages -->
+    <string name="connection_established">Connection Established</string>
     <string name="first_login_without_internet">This is your first attempt to login!\nTo login without internet\nyou have to access at least\none time with internet connection</string>
     <string name="invalid_login">Invalid login</string>
     <string name="successful_unjoined">Unjoined successfully</string>
