@@ -140,14 +140,6 @@ public class WebViewActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             progressBar.setVisibility(View.GONE);
-
-            // Injects javascript inside java in order to automatically
-            // fill the fields and submits the form
-
-            webView.loadUrl("javascript: {" +
-                    "document.getElementById('eid').value = Android.getWebviewUsername();" +
-                    "document.getElementById('pw').value = Android.getWebviewPassword();" +
-                    "document.getElementById('submit').click(); }");
         }
 
     }

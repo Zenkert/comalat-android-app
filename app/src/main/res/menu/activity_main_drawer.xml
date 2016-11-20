@@ -17,10 +17,6 @@
             android:icon="@drawable/ic_menu_features"
             android:title="@string/features" />
         <item
-            android:id="@+id/site_browser"
-            android:icon="@mipmap/ic_public"
-            android:title="@string/site_browser" />
-        <item
             android:id="@+id/training"
             android:icon="@drawable/ic_menu_training"
             android:title="@string/training" />
