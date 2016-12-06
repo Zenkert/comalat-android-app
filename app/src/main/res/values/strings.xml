@@ -16,7 +16,7 @@
     <string name="help_url">"http://141.99.248.86:8089/portal/help/main"</string>
     <string name="portal">"http://141.99.248.86:8089/portal/"</string>
     <string name="portal_site">"http://141.99.248.86:8089/portal/site/"</string>
-    <string name="comalat_guide_tool_postfix">"/tool/4ad75286-6e28-41c1-83a3-41ba3aeffe8a/?0"</string>
+    <string name="comalat_guide_tool_postfix">"/tool/"</string>
 
     <!-- Message of the day -->
     <string name="message_of_the_day">Message Of The Day</string>

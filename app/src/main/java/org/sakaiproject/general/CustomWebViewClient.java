@@ -17,33 +17,21 @@ public class CustomWebViewClient extends WebViewClient {
     @SuppressWarnings("deprecation")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        final Uri uri = Uri.parse(url);
-        return handleUri(uri);
+
+        return false;
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        final Uri uri = request.getUrl();
-        return handleUri(uri);
+
+        return false;
     }
 
-    private boolean handleUri(final Uri uri) {
-        //Log.i(TAG, "Uri =" + uri);
-        System.out.println(uri);
-        final String host = uri.getHost();
-        final String scheme = uri.getScheme();
-        // Based on some condition you need to determine if you are going to load the url
-        // in your web view itself or in a browser.
-        // You can use `host` or `scheme` or any part of the `uri` to decide.
-        //if (/* any condition */) {
-            // Returning false means that you are going to load this url in the webView itself
-            return false;
-        //} else {
-            // Returning true means that you need to handle what to do with the url
-            // e.g. open web page in a Browser
-           // final Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-           // startActivity(intent);
-           // return true;
+
+    @Override
+    public void onLoadResource(WebView  view, String  url){
+
     }
+
 }
