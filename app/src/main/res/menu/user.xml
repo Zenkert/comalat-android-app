@@ -8,12 +8,6 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@mipmap/ic_search_white"
-        android:title="@string/action_search"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/action_open_right_drawer"
         android:icon="@mipmap/ic_sites_drawer"
         android:title="@string/action_open_right_drawer"

@@ -24,27 +24,30 @@
 
     <!-- Welcome -->
     <string name="welcome_title">Welcome!</string>
-    <string name="welcome_to_sakai">Welcome to Sakai</string>
     <string name="welcome_message">
-        <![CDATA[Welcome to the Sakai Demo. The Demo configuration was created as a way to let you get an instance of Sakai up and running quickly and easily.
-        For more information about installing a Sakai solution appropriate for production needs please read the readme files, and visit the Sakai website at
-        <a href="http://www.sakaiproject.org">sakaiproject.org</a>, and the Sakai Developer\'s site at <a href="http://collab.sakaiproject.org">collab.sakaiproject.org</a>.]]>
+        <![CDATA[The COMALAT System is a flexible, web-based platform and application for mobile devices for teaching and learning language skills. The system offers German, English and Spanish learning materials to all EU citizens as Open Educational Resource (OER). COMALAT provides adaptability, i.e. it adapts to the needs and interests of users. The strengths and weaknesses, as well as the learning objectives of each user are taken into account during the learning process.]]>
     </string>
 
     <!-- About -->
-    <string name="about_sakai_title">About Sakai</string>
+    <string name="about_sakai_title">About COMALAT</string>
     <string name="about_sakai_message">
-        <![CDATA[Sakai is a set of software tools designed to help instructors, researchers, and students create websites for collaboration. Using a web browser, users
-        choose from a set of features to create a site that meets their needs.<br /><br />Here are some common uses of Sakai:<br /><ul><li>A researcher can create a website for
-        collaboration on a project with colleagues.</li><li>An instructor can create a website that serves as an online discussion board for students to collaborate on an
-        assignment.</li><li>A student can create a site for a study group or for extra curricular activities (depending on institutional policy).</li></ul><br />Sakai is a
-        part of the <a href="http://www.apereo.org">Apereo Foundation</a> (www.apereo.org).<br /><br />An overview of Sakai can be found at
-        <a href="http://www.sakaiproject.org">http://www.sakaiproject.org</a>. For more information, contact <a href="mailto:sakaicoordinator@apereo.org">the
-        Sakai Community Coordinator</a>.]]>
+        <![CDATA[<p><b>Project name: </b>Competence Oriented Multilingual Adaptive Language Assessment and Training System </p>
+<p><b>Project acronym: </b>COMALAT</p>
+<p><b>Project duration: </b>September 1, 2014 - August 31, 2017</p>
+<p><b>Project program: </b>Erasmus +, Key Action 2 Strategic Partnerships</p>
+<p><b>Project reference: </b>2014-1-DE02-KA200-001589</p>
+<p><b>Project objective</b></p>
+<p>The aim of the COMALAT project is to develop a language training platform, which is able to adapt to the needs of the learner. The learning platform provides language skills and job-oriented skills through customized learning materials that are tailored to the individual interests, strengths and weaknesses of the learner within the learning progress.</p>
+<p><b>Project partners</b></p>
+<p>Institute of Practical Informatics, University of Siegen(Coordinator)</p>
+<p>Institute of Knowledge Based Systems and Knowledge Management, University of Siegen</p>
+<p>Aristotle University of Thessaloniki (AUTH)</p>
+<p>Language Centre, University of Alicante</p>]]>
     </string>
 
     <!-- Features -->
     <string name="features_title">Capabilities</string>
+    <string name="features_comalat">COMALAT is based on the open source Sakai learning management system.</string>
     <string name="features_capabilities">Sakai offers a variety of capabilities for use in course and project sites, including:</string>
     <string name="home_capabilities">View recent announcements, discussions, and chat activity</string>
     <string name="announcements_capabilities">Post current, time-critical information</string>

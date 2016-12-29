@@ -101,20 +101,11 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/welcome_to_sakai"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/welcome_title"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/welcome_to_sakai"
-                        android:textSize="18sp" />
-
                     <org.sakaiproject.customviews.rich_textview.RichTextView
                         android:id="@+id/welcome_message"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/welcome_to_sakai"
+                        android:layout_below="@+id/welcome_title"
                         android:layout_marginTop="10dp"
                         android:text="@string/welcome_message" />
 

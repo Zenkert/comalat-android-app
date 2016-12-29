@@ -23,10 +23,21 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/features_capabilities"
+                android:id="@+id/features_comalat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/features_title"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/features_comalat"
+                android:background="@color/yellow"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/features_capabilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/features_comalat"
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:text="@string/features_capabilities"

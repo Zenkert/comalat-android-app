@@ -127,8 +127,6 @@ public class MainActivity extends AppCompatActivity
                 SignupFragment signupFragment = new SignupFragment();
                 ActionsHelper.selectFragment(signupFragment, R.id.content_frame, this);
                 break;
-            case R.id.reset_password:
-                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

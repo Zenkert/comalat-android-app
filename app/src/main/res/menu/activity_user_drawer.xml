@@ -8,7 +8,6 @@
             <group
                 android:id="@+id/main_group"
                 android:checkableBehavior="single">
-
             </group>
         </menu>
     </item>
