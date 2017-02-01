@@ -32,6 +32,11 @@
             android:id="@+id/new_user"
             android:icon="@drawable/ic_menu_new_user"
             android:title="@string/new_account" />
+
+        <item
+            android:id="@+id/offline_use"
+            android:icon="@drawable/book_shelf"
+            android:title="@string/offline_use" />
     </group>
 
     <item android:title="@string/other">

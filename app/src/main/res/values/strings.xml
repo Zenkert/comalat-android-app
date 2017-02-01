@@ -426,4 +426,5 @@
     <string name="information">Information</string>
 
     <string name="permissions_message">You have to accept the permission first.</string>
+    <string name="offline_use">Offline Use</string>
 </resources>
