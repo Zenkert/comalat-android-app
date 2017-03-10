@@ -1,10 +1,12 @@
 package org.sakaiproject.sakai;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -63,7 +65,11 @@ public class MembershipDescriptionFragment extends DialogFragment {
         mWebView = (WebView) v.findViewById(R.id.membership_webview);
         data = (SiteData) getArguments().getSerializable("data");
         String comalat_guide_url = getString(R.string.portal_site)+data.getId()+getString(R.string.comalat_guide_tool_postfix);
-
+        CookieManager.getInstance().setAcceptCookie(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            CookieManager.getInstance().acceptThirdPartyCookies(mWebView);
+            CookieManager.getInstance().setAcceptThirdPartyCookies(mWebView,true);
+        }
         String postdata = "eid="+Global.userName+"&pw="+Global.passWord;
         mWebView.postUrl(comalat_guide_url,postdata.getBytes());
         mWebView.setWebChromeClient(new WebChromeClient());
@@ -78,8 +84,9 @@ public class MembershipDescriptionFragment extends DialogFragment {
         mWebView.setHorizontalScrollBarEnabled(false);
         mWebView.setVerticalScrollBarEnabled(true);
         webSettings.setCacheMode(
-             android.webkit.WebSettings.LOAD_DEFAULT);
+             WebSettings.LOAD_DEFAULT);
         webSettings.setEnableSmoothTransition(true);
+        webSettings.setAllowFileAccess(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
 
