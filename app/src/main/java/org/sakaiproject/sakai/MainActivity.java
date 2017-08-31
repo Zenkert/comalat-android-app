@@ -127,6 +127,10 @@ public class MainActivity extends AppCompatActivity
                 SignupFragment signupFragment = new SignupFragment();
                 ActionsHelper.selectFragment(signupFragment, R.id.content_frame, this);
                 break;
+            case R.id.offline_use:
+                OfflineFragment offlineFragment = new OfflineFragment();
+                ActionsHelper.selectFragment(offlineFragment, R.id.content_frame, this);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

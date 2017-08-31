@@ -12,6 +12,7 @@
     <color name="blue">#4285F4</color>
     <color name="orange">#FBBC05</color>
     <color name="yellow">#ffff00</color>
+    <color name="black">#000000</color>
 
     <!-- other -->
     <color name="error">#C61E21</color>
