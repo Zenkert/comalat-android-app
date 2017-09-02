@@ -1,18 +1,15 @@
 package org.sakaiproject.sakai;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import org.sakaiproject.adapters.offline_use.Offline_levelRecyclerAdapter;
 import org.sakaiproject.api.offline_use.Model.Language;
 import org.sakaiproject.api.offline_use.Service.OfflineDownloadService;
@@ -48,12 +45,12 @@ public class OfflineDetailsFragment extends Fragment {
 
         dl = new OfflineDownloadService(getActivity(), download_lang);
         url = getContext().getResources().getString(R.string.offline_url);
+
         download_lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // check room
                 String link = url + "languages/" + lang.getLanguageName();
-                dl.getFile(link, lang.getLanguageName() + ".zip");
+                dl.getFile(link, lang.getLanguageName() + ".zip", "", lang.getSize());
             }
         });
 
@@ -87,7 +84,6 @@ public class OfflineDetailsFragment extends Fragment {
     }
 
     public void setLang() {
-        //fill text views
         noUntisView.setText(String.valueOf(lang.getNoUnits()));
         sizeView.setText(byte2MegaByte(lang.getSize()));
         lastupdateView.setText(lang.getLastupdate());
