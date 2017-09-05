@@ -18,17 +18,29 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
+                android:layout_weight="0"
+                android:padding="0px"
+                android:background="@color/colorPrimary"
                 android:src="@mipmap/ic_graduation_cap"
                 android:id="@+id/offline_logo_id"/>
 
             <Spinner
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/offline_spinner_id"
+                android:layout_weight="1"
                 android:textAlignment="center"
                 android:padding="5sp"
                 android:theme="@style/Widget.AppCompat.DropDownItem.Spinner" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="0px"
+                android:background="@color/colorPrimary"
+                android:id="@+id/offline_reload_id"
+                android:layout_weight="0"
+                android:src="@mipmap/ic_reload"/>
 
         </LinearLayout>
 

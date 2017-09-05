@@ -12,6 +12,8 @@
         android:name="org.sakaiproject.sakai.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
+    <permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="org.sakaiproject.sakai.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

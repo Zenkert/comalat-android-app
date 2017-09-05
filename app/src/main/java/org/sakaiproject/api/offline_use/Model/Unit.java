@@ -1,5 +1,7 @@
 package org.sakaiproject.api.offline_use.Model;
 
+import java.io.File;
+import java.io.FileFilter;
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,11 +9,11 @@ import java.util.List;
  * Created by SyleSakis on 21/08/2017.
  */
 
-public class Unit implements Serializable {
+public class Unit implements FolderHandler, Serializable {
     private String unitName;
     private List<String> exercisedSkills;
     private String filename;
-    private long size;
+    private long size = 0;
 
     public Unit() {
     }
@@ -47,11 +49,38 @@ public class Unit implements Serializable {
         this.filename = filename;
     }
 
+    @Override
     public long getSize() {
         return size;
     }
 
     public void setSize(long size) {
         this.size = size;
+    }
+
+    @Override
+    public int getNoUnits() {
+        return 1;
+    }
+
+    @Override
+    public Unit readFromFolder(String path) {
+        File directory = new File(path);
+        this.setUnitName(directory.getName());
+
+        for (File pdfFile : directory.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return (pathname.getPath().endsWith(".pdf")
+                        && pathname.isFile());
+            }
+        })) {
+            this.setFilename(pdfFile.getName());
+            this.size = pdfFile.length();
+
+            return this;
+        }
+
+        return null;
     }
 }

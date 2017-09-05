@@ -1,6 +1,7 @@
 package org.sakaiproject.api.offline_use.Service;
 
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -13,12 +14,15 @@ import org.sakaiproject.api.offline_use.Model.Language;
 import org.sakaiproject.api.offline_use.Model.Level;
 import org.sakaiproject.api.offline_use.Model.Unit;
 import org.sakaiproject.sakai.AppController;
+import org.sakaiproject.sakai.R;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +31,7 @@ import java.util.List;
  * Created by SyleSakis on 22/08/2017.
  */
 
-public class OfflineDataService{
+public class OfflineDataService {
     private static final String LANGUAGES_TAG = "Languages";
     private static final String LANGUAGE_TAG = "Language";
     private static final String EDUCATION_LEVELS_TAG = "EducationLevels";
@@ -69,6 +73,8 @@ public class OfflineDataService{
                 }
             });
             AppController.getInstance().addToRequestQueue(dataRequest, LANGUAGES_TAG);
+        } else {
+            callback.onSuccess(parsingLocalData());
         }
     }
 
@@ -87,21 +93,21 @@ public class OfflineDataService{
 
                 JSONArray lvls = jsonLangs.getJSONObject(i).getJSONArray(EDUCATION_LEVELS_TAG);
                 List<Level> levels = new ArrayList<>();
-                for(int j = 0; j<lvls.length(); j++){
+                for (int j = 0; j < lvls.length(); j++) {
                     Level tmplvl = new Level();
                     tmplvl.setSize(lvls.getJSONObject(j).getLong(SIZE_TAG));
                     tmplvl.setLevel(lvls.getJSONObject(j).getString(EDUCATION_LEVEL_TAG));
 
                     JSONArray jsonCourses = lvls.getJSONObject(j).getJSONArray(COURSES_TAG);
                     List<Course> courses = new ArrayList<>();
-                    for(int x = 0; x<jsonCourses.length(); x++){
+                    for (int x = 0; x < jsonCourses.length(); x++) {
                         Course tmpCourse = new Course();
                         tmpCourse.setCourseName(jsonCourses.getJSONObject(x).getString(COURSE_TAG));
                         tmpCourse.setSize(jsonCourses.getJSONObject(x).getLong(SIZE_TAG));
 
                         JSONArray jsonUnits = jsonCourses.getJSONObject(x).getJSONArray(UNITS_TAG);
                         List<Unit> units = new ArrayList<>();
-                        for (int y = 0; y<jsonUnits.length(); y++){
+                        for (int y = 0; y < jsonUnits.length(); y++) {
                             Unit tmpUnit = new Unit();
                             tmpUnit.setUnitName(jsonUnits.getJSONObject(y).getString(UNIT_TAG));
                             tmpUnit.setFilename(jsonUnits.getJSONObject(y).getString(FILE_TAG));
@@ -121,10 +127,35 @@ public class OfflineDataService{
         } catch (JSONException ex) {
             Log.e("Error", "ParsingData: " + ex.getMessage(), ex);
         }
-        if(languages.size() != 0){
+        if (languages.size() != 0) {
             return languages;
         }
 
+        return null;
+    }
+
+    private List<Language> parsingLocalData() {
+        List<Language> languages = new ArrayList<>();
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getPath()
+                + File.separator + context.getResources().getString(R.string.comalatFolder);
+        File directory = new File(path);
+        if(directory.exists()){
+            for(File folder : directory.listFiles(new FileFilter() {
+                @Override
+                public boolean accept(File pathname) {
+                    return pathname.isDirectory();
+                }
+            })){
+                Language lang = new Language();
+                lang.readFromFolder(folder.getPath());
+
+                languages.add(lang);
+            }
+        }
+
+        if (languages.size() != 0) {
+            return languages;
+        }
         return null;
     }
 }
