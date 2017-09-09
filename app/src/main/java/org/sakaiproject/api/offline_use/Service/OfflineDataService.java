@@ -3,6 +3,7 @@ package org.sakaiproject.api.offline_use.Service;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,7 +70,8 @@ public class OfflineDataService {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    callback.onError(error);
+                    Toast.makeText(context, "Server unreachable. Load local files", Toast.LENGTH_LONG).show();
+                    callback.onSuccess(parsingLocalData());
                 }
             });
             AppController.getInstance().addToRequestQueue(dataRequest, LANGUAGES_TAG);
