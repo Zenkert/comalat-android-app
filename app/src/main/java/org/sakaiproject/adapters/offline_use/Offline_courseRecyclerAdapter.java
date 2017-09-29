@@ -41,7 +41,7 @@ public class Offline_courseRecyclerAdapter extends RecyclerView.Adapter<Offline_
     @Override
     public void onBindViewHolder(final Offline_courseHolder holder, int position) {
         final Course course = lvl.getCourses().get(position);
-        final String url = context.getResources().getString(R.string.offline_url) + "languages/" + langName + "/levels/" + lvl.getLevel() + "/courses/";
+        final String url = context.getResources().getString(R.string.server_offline_use_url) + context.getResources().getString(R.string.restAPI) + "languages/" + langName + "/levels/" + lvl.getLevel() + "/courses/";
         final String subPath = langName + File.separator + lvl.getLevel() + File.separator;
 
         holder.unitAdapter.setData(course, lvl.getLevel(), langName);

@@ -35,7 +35,7 @@ public class Offline_levelRecyclerAdapter extends RecyclerView.Adapter<Offline_l
     @Override
     public void onBindViewHolder(final Offline_levelHolder holder, int position) {
         final Level lvl = language.getLevels().get(position);
-        final String url = context.getResources().getString(R.string.offline_url) + "languages/" + language.getLanguageName() + "/levels/";
+        final String url = context.getResources().getString(R.string.server_offline_use_url) + context.getResources().getString(R.string.restAPI) + "languages/" + language.getLanguageName() + "/levels/";
         final String subPath = language.getLanguageName() + File.separator;
 
         holder.lvlName.setText(lvl.getLevel());

@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 
 import org.sakaiproject.api.callback.Callback;
-import org.sakaiproject.api.internet.NetWork;
 import org.sakaiproject.api.offline_use.Model.Language;
 import org.sakaiproject.api.offline_use.Service.OfflineDataService;
 
@@ -141,7 +139,7 @@ public class OfflineFragment extends Fragment implements Callback {
 
     private void getData(){
         OfflineDataService data = new OfflineDataService(getContext(), this);
-        data.getData(getContext().getResources().getString(R.string.offline_url) + "data");
+        data.getData(getContext().getResources().getString(R.string.server_offline_use_url) + getContext().getResources().getString(R.string.restAPI) + "data");
     }
 
     @Override

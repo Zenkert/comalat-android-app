@@ -429,8 +429,9 @@
     <string name="offline_use">Offline Use</string>
 
     <!-- Offline use -->
+    <string name="server_offline_use_url">http://141.99.248.86:8086/comalat/</string>
+    <string name="restAPI">restAPI/</string>
     <string name="no_languages_offline">No Languages</string>
-    <string name="offline_url">http://192.168.2.8:8080/offline-web-app/comalat/</string>
     <string name="choose_lang">Choose Language</string>
     <string name="serial_lang">language</string>
     <string name="comalatFolder">Comalat Folder</string>

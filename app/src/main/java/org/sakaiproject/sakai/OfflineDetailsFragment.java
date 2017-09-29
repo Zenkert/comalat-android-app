@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import org.sakaiproject.adapters.offline_use.Offline_levelRecyclerAdapter;
 import org.sakaiproject.api.offline_use.Model.Language;
 import org.sakaiproject.api.offline_use.Service.OfflineDownloadService;
@@ -44,7 +45,7 @@ public class OfflineDetailsFragment extends Fragment {
         recyclerLevelView = (RecyclerView) v.findViewById(R.id.offline_recycler_lvl);
 
         dl = new OfflineDownloadService(getActivity(), download_lang);
-        url = getContext().getResources().getString(R.string.offline_url);
+        url = getContext().getResources().getString(R.string.server_offline_use_url) + getContext().getResources().getString(R.string.restAPI);
 
         download_lang.setOnClickListener(new View.OnClickListener() {
             @Override

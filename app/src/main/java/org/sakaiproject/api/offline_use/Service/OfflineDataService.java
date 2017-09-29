@@ -60,6 +60,7 @@ public class OfflineDataService {
     }
 
     public void getData(String url) {
+        Log.d("---------------URL", "onErrorResponse: " + url);
         if (NetWork.getConnectionEstablished()) {
             JsonObjectRequest dataRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 

@@ -40,7 +40,7 @@ public class Offline_unitRecyclerAdapter extends RecyclerView.Adapter<Offline_un
     @Override
     public void onBindViewHolder(final Offline_unitHolder holder, int position) {
         final Unit unit = course.getUnits().get(position);
-        final String url = context.getResources().getString(R.string.offline_url) + "languages/" + langName + "/levels/" + lvlName + "/courses/" + course.getCourseName() + "/units/";
+        final String url = context.getResources().getString(R.string.server_offline_use_url) + context.getResources().getString(R.string.restAPI) + "languages/" + langName + "/levels/" + lvlName + "/courses/" + course.getCourseName() + "/units/";
         final String folderPath = langName + File.separator + lvlName + File.separator + course.getCourseName() + File.separator;
 
         holder.unitName.setText(unit.getUnitName());
